@@ -1,20 +1,24 @@
-import { getNativeBridge } from '../utils/native-bridge.d';
+import NativeBridge from '../plugins/native-bridge';
 
 /**
- * React hook — 封装的 NativeBridge 调用
+ * React hook — Capacitor 插件封装（方案3）
+ * 浏览器环境下自动降级
  */
 export function useNativeBridge() {
-  const toast = (message: string) => {
-    const bridge = getNativeBridge();
-    if (bridge) {
-      bridge.showToast(message);
-    } else {
+  const toast = async (message: string) => {
+    try {
+      await NativeBridge.showToast({ message });
+    } catch {
       console.log('[Toast fallback]', message);
     }
   };
 
-  const getDeviceInfo = (): string => {
-    return getNativeBridge()?.getDeviceInfo() ?? 'Web Browser';
+  const getDeviceInfo = async () => {
+    try {
+      return await NativeBridge.getDeviceInfo();
+    } catch {
+      return { sdkVersion: 'Web', brand: 'N/A', model: 'Browser' };
+    }
   };
 
   return { toast, getDeviceInfo };
