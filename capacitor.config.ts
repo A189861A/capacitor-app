@@ -1,0 +1,13 @@
+import type { CapacitorConfig } from '@capacitor/cli';
+
+const config: CapacitorConfig = {
+  appId: 'com.example.app',
+  appName: 'capacitor-app',
+  webDir: 'build',
+  server: {
+    url: 'http://172.20.16.244:3001',
+    cleartext: true
+  }
+};
+
+export default config;
