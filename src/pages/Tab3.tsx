@@ -1,6 +1,9 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton } from '@ionic/react';
+import { useIonRouter } from '@ionic/react';
 
 const Tab3: React.FC = () => {
+  const router = useIonRouter();
+
   return (
     <IonPage>
       <IonHeader>
@@ -9,8 +12,12 @@ const Tab3: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
-        <h1>Settings</h1>
-        <p>Configure your app preferences here.</p>
+        <IonButton onClick={() => router.push('/tab3/detail')}>
+          Open Detail
+        </IonButton>
+        <IonButton onClick={() => router.push('/user-indor')}>
+          Open UserIndor
+        </IonButton>
       </IonContent>
     </IonPage>
   );

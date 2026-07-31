@@ -17,6 +17,23 @@ public class NativeBridgePlugin extends Plugin {
     /**
      * 弹出原生 Toast
      * JS 调用: NativeBridge.showToast({ message: 'Hello' })
+     * 
+     * @param call 插件调用对象
+     * getActivity() 是 com.getcapacitor.Plugin 基类提供的方法，
+                    返回插件当前依附的 Android Activity（即 MainActivity 实例）。
+     * 常用 call 方法
+        方法	                                作用	                      示例
+        call.getString(key, default)	    读字符串参数	         call.getString("msg", "")
+        call.getInt(key, default)	        读整数参数	             call.getInt("count", 0)
+        call.getBoolean(key, default)	    读布尔参数	             call.getBoolean("force", false)
+        call.getObject(key)             	读对象参数	             call.getObject("config")
+        call.resolve()	                    通知成功	             call.resolve()
+        call.resolve(data)              	成功 + 返回数据	         call.resolve(new JSObject())
+        call.reject(msg)	                通知失败	             call.reject("Network error")
+
+     * 
+        @Nullable — 允许为 null
+        @NonNull — 不允许为 null
      */
     @PluginMethod
     public void showToast(@NonNull PluginCall call) {
