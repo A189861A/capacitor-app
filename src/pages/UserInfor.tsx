@@ -8,7 +8,7 @@ import {
   IonBackButton,
 } from '@ionic/react';
 
-const UserIndor: React.FC = () => {
+const UserInfor: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
@@ -16,15 +16,15 @@ const UserIndor: React.FC = () => {
           <IonButtons slot="start">
             <IonBackButton defaultHref="/tab3" />
           </IonButtons>
-          <IonTitle>User Indoor</IonTitle>
+          <IonTitle>User Infor</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
-        <h1>User Indoor</h1>
+        <h1>User Infor</h1>
         <p>This page renders in a separate outlet — no bottom tab bar.</p>
       </IonContent>
     </IonPage>
   );
 };
 
-export default UserIndor;
+export default UserInfor;

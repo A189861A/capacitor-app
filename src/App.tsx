@@ -6,7 +6,7 @@ import Tab1 from './pages/Tab1';
 import Tab2 from './pages/Tab2';
 import Tab3 from './pages/Tab3';
 import SettingsDetail from './pages/SettingsDetail';
-import UserIndor from './pages/UserIndor';
+import UserInfor from './pages/UserInfor';
 
 const App: React.FC = () => (
   <IonApp>
@@ -15,7 +15,7 @@ const App: React.FC = () => (
         {/*
           外层 IonRouterOutlet — 全屏页面（无 tab bar）
         */}
-        <Route exact path="/user-indor" component={UserIndor} />
+        <Route exact path="/user-infor" component={UserInfor} />
 
         {/*
           内层 IonTabs — tab 页面

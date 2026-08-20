@@ -15,8 +15,8 @@ const Tab3: React.FC = () => {
         <IonButton onClick={() => router.push('/tab3/detail')}>
           Open Detail
         </IonButton>
-        <IonButton onClick={() => router.push('/user-indor')}>
-          Open UserIndor
+        <IonButton onClick={() => router.push('/user-infor')}>
+          Open UserInfor
         </IonButton>
       </IonContent>
     </IonPage>
